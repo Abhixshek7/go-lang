@@ -11,21 +11,27 @@ func main(){
 	
 	var userName string
 	var userTicket uint
+	var userEmail string
 
 	for{
-		fmt.Printf("Welcome to this %v of existentialists.!\n", conferenceName)
+	fmt.Printf("Welcome to this %v of existentialists.!\n", conferenceName)
 	fmt.Println("If you are here then you seriously need help. So, welcome to this shit show!")
 	fmt.Printf("There are currently %v seats available out of %v tickets, be part of the greater good!\n",availableTickets,totalTickets);
 
 	
 
 	fmt.Println()
+
 	fmt.Print("Enter your name you fucking retard : ")
 	fmt.Scan(&userName)
+
+	fmt.Print("Enter your email address which u use to visit the hub : ")
+	fmt.Scan(&userEmail)
+
 	fmt.Print("How many seats do you want for you ass ? = ")
 	fmt.Scan(&userTicket)
 
-	fmt.Printf("Welcome to the shit show %v. You have purchased %v tickets.\n",userName,userTicket)
+	fmt.Printf("Welcome to the shit show %v. You have purchased %v tickets.Confirmation email sent to the following account = %v \n",userName,userTicket,userEmail)
 	bookings = append(bookings,userName);
 	availableTickets -=userTicket
 	fmt.Printf("%v tickets remaining(This is just for development purpose only)\n",availableTickets)
