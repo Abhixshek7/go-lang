@@ -1,9 +1,9 @@
-package main
+package gatherUserData
 import (
 	"fmt"
 	"booking-project/helper"
 )
-func gatherUserData()(string, string,uint){
+func GatherUserData(availableTickets uint)(string, string,uint){
 	
 
 	var userName string
@@ -35,7 +35,7 @@ func gatherUserData()(string, string,uint){
 		
 		fmt.Print("How many seats do you want for you ass ? = ")
 		fmt.Scan(&userTicket)
-		if helper.ValidateTickeCount(userTicket){
+		if helper.ValidateTickeCount(userTicket,availableTickets){
 			break
 		}
 		fmt.Println("Enter a valid number u retard!!")

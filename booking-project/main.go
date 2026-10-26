@@ -2,10 +2,15 @@ package main
 
 import (
 	"fmt"
+	"booking-project/booking"
+	"booking-project/gatherUserData"
+	"booking-project/greet"
+	
+	
 
 )
 
-var conferenceName = "Fucking Retard Group"
+var ConferenceName = "Fucking Retard Group"
 const totalTickets = 69
 var availableTickets uint = 69
 
@@ -16,9 +21,9 @@ func main(){
 
 	
 	for{
-	greetMsg()
-	userName,userEmail,userTicket := gatherUserData();
-	availableTickets  = booking(userTicket,availableTickets,userName,userEmail)
+	greet.GreetMsg(ConferenceName,availableTickets,totalTickets)
+	userName,userEmail,userTicket := gatherUserData.GatherUserData(availableTickets);
+	availableTickets  = booking.Booking(userTicket,availableTickets,userName,userEmail)
 	fmt.Println()
 	
 	if availableTickets ==0{

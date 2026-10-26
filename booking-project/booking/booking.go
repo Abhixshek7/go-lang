@@ -1,6 +1,6 @@
-package main
+package booking
 import "fmt"
-func booking(userTicket uint, availableTickets uint, userName string,userEmail string) uint{
+func Booking(userTicket uint, availableTickets uint, userName string,userEmail string) uint{
 	if(userTicket>availableTickets){
 		fmt.Print("Seat limit exceeds, try again!!")
 		return availableTickets

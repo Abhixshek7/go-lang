@@ -22,6 +22,6 @@ func ValidateEmail(userEmail string)bool{
 	return strings.Contains(userEmail,"@") && strings.Contains(userEmail,".")
 }
 
-func ValidateTickeCount(userTicket uint) bool{
-	return userTicket>0;
+func ValidateTickeCount(userTicket uint,availableTickets uint) bool{
+	return userTicket>0 && userTicket<=availableTickets ;
 }
