@@ -1,5 +1,8 @@
 package main
-import "fmt"
+import (
+	"fmt"
+	"booking-project/helper"
+)
 func gatherUserData()(string, string,uint){
 	
 
@@ -10,7 +13,7 @@ func gatherUserData()(string, string,uint){
 	for{
 		fmt.Print("Enter your name you fucking retard : ")
 		fmt.Scan(&userName)
-		if validateName(userName){
+		if helper.ValidateName(userName){
 			break
 		}
 
@@ -22,7 +25,7 @@ func gatherUserData()(string, string,uint){
 		fmt.Print("Enter your email address which u use to visit the hub : ")
 		fmt.Scan(&userEmail)
 
-		if validEmail(userEmail){
+		if helper.ValidateEmail(userEmail){
 			break
 		}
 		fmt.Println("Dont fucking lie man, you cant get the hub mail wrong!!!!")
@@ -32,7 +35,7 @@ func gatherUserData()(string, string,uint){
 		
 		fmt.Print("How many seats do you want for you ass ? = ")
 		fmt.Scan(&userTicket)
-		if validTickeCount(userTicket){
+		if helper.ValidateTickeCount(userTicket){
 			break
 		}
 		fmt.Println("Enter a valid number u retard!!")

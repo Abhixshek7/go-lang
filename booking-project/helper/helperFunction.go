@@ -1,10 +1,10 @@
-package main
+package helper
 
 import (
 	"strings"
 	"unicode"
 )
-func validateName(userName string) bool{
+func ValidateName(userName string) bool{
 	if userName ==" " || len(userName)<2{
 		return false
 	}
@@ -18,10 +18,10 @@ func validateName(userName string) bool{
 }
 
 
-func validEmail(userEmail string)bool{
+func ValidateEmail(userEmail string)bool{
 	return strings.Contains(userEmail,"@") && strings.Contains(userEmail,".")
 }
 
-func validTickeCount(userTicket uint) bool{
+func ValidateTickeCount(userTicket uint) bool{
 	return userTicket>0;
 }
