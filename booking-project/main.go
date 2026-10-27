@@ -5,6 +5,9 @@ import (
 	"booking-project/booking"
 	"booking-project/gatherUserData"
 	"booking-project/greet"
+	"booking-project/sendTicket"
+	"sync"
+	
 
 )
 
@@ -18,17 +21,20 @@ type UserData struct{
 }
 
 var bookings = make([]UserData,0)
-
+var wg = sync.WaitGroup{}
 func main(){
 	
 
 	// bookings := [] string{}
 
 	
-	for{
+	// for{
 	greet.GreetMsg(ConferenceName,availableTickets,totalTickets)
-	userName,userEmail,userTicket := gatherUserData.GatherUserData(availableTickets);
+	userName,userEmail,userTicket := gatherUserData.GatherUserData(availableTickets)
 	availableTickets  = booking.Booking(userTicket,availableTickets,userName,userEmail)
+	wg.Add(1)
+	go sendticket.Sendticket(userTicket,userName,userEmail,&wg)
+	wg.Wait()
 	fmt.Println()
 	
 	newBooking := UserData{
@@ -48,10 +54,10 @@ func main(){
 			booking.UserTicket,);
 			fmt.Println()
 		}
-		break;
+		// break;
 	}
 	
-	}
+	// }
 	// fmt.Println(conferenceName)
 } 
 
